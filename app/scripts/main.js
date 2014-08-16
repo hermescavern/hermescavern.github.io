@@ -20,5 +20,6 @@
   'use strict';
 
   var location = window.location;
+  location.split('?');
 
 })();
