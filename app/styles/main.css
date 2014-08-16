@@ -19,9 +19,15 @@ body {
   position: relative;
   font-family: 'Roboto Condensed', 'Helvetica', 'Arial', sans-serif;
   font-weight: 300;
-  background-color: #FFFFFF;
+  background-color: black;
+  color: white;
   box-sizing: border-box;
   min-height: 100%;
+}
+
+a {
+  color: #ddd;
+  text-decoration: none;
 }
 
 body.open {
@@ -210,7 +216,7 @@ body.open {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-main {
+div.main {
   margin: 0 auto;
   /* Height of the header */
   padding: 60px 16px 16px 16px;
@@ -224,7 +230,7 @@ main {
   }
 
   .app-bar.open,
-  .app-bar.open ~ main {
+  .app-bar.open ~ div.main {
     -webkit-transform: translate(0px, 0);
             transform: translate(0px, 0);
   }
@@ -293,7 +299,7 @@ main {
     border: none;
   }
 
-  main {
+  div.main {
     max-width: 864px;
     padding-top: 0;
     min-height: initial;
