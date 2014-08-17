@@ -19,6 +19,9 @@
 (function () {
   'use strict';
 
-  var location = window.location;
+  var path = window.location.pathname;
+  var url = 'vkmm://vkmm.net' + path;
+  var openSong = document.getElementById('open-song');
+  openSong.href = url;
 
 })();
