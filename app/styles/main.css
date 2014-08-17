@@ -26,8 +26,12 @@ body {
 }
 
 a {
-  color: #ddd;
+  color: #4298C3;
   text-decoration: none;
+}
+
+a:visited {
+  color: #4298C3;
 }
 
 body.open {

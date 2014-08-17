@@ -138,6 +138,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 // Watch Files For Changes & Reload
 gulp.task('serve', ['styles'], function () {
+  var fs = require("fs");
   browserSync({
     notify: false,
     // Run as an https by uncommenting 'https: true'
@@ -145,7 +146,17 @@ gulp.task('serve', ['styles'], function () {
     //       will present a certificate warning in the browser.
     // https: true,
     server: {
-      baseDir: ['.tmp', 'app']
+      baseDir: ['.tmp', 'app'],
+      middleware: [
+        function(req, res, next){
+          if(req.url != '/' && process.env.PWD + fs.existsSync(req.url)){
+            next();
+          }else{
+            var stream = fs.createReadStream("app/index.html")
+            stream.pipe(res);
+          }
+        }
+      ]
     }
   });
 
