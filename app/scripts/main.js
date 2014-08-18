@@ -16,7 +16,7 @@
  *  limitations under the License
  *
  */
-(function () {
+(function (window) {
   'use strict';
 
   var path = window.location.pathname;
@@ -24,4 +24,9 @@
   var openSong = document.getElementById('open-song');
   openSong.href = url;
 
-})();
+  openSong.addEventListener('click', function(){
+	ga = window.ga;
+  	ga('send', 'event', 'link', 'click', path);
+  });
+
+})(window);
