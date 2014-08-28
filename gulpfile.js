@@ -129,7 +129,7 @@ gulp.task('html', function () {
     // Minify Any HTML
     .pipe($.if('*.html', $.minifyHtml()))
     // Output Files
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('.'))
     .pipe($.size({title: 'html'}));
 });
 
