@@ -29,4 +29,14 @@
   	ga('send', 'event', 'link', 'click', path);
   });
 
+  if(path === '/'){
+  	openSong.style.display = 'none';
+  }
+
+  var apkLink = document.getElementById('apk-link');
+  apkLink.addEventListener('click', function(){
+  	ga = window.ga;
+  	ga('send', 'event', 'apk', 'click');
+  });
+
 })(window);
